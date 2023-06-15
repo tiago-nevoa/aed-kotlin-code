@@ -1,10 +1,17 @@
+/*
+    O(Log(n))
+    Divide and Conquer
+    Sorted Data Requirement
+    It reduces the search space by half in each iteration.
+ */
+
 fun binarySearch(array: IntArray, l: Int, r: Int, element: Int): Int {
     println("Init search")
     var l = l
     var r = r
     var mid: Int
     while (l <= r) {
-        mid = l + (r - l) / 2
+        mid = (l + r) / 2
         if (array[mid] == element)
             return mid
         else if (array[mid] < element)
@@ -14,9 +21,4 @@ fun binarySearch(array: IntArray, l: Int, r: Int, element: Int): Int {
     }
     println("End search")
     return -1
-}
-
-fun main() {
-    val k = readln()
-    println(k)
 }
