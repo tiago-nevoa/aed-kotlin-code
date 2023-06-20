@@ -9,7 +9,8 @@
  */
 fun fibonacciLinear(n:Long): Long{
     if (n <= 1) return n
-    val array = Array(n.toInt() + 1) {0L}
+    val array = Array(n.toInt() + 1)
+    array[0] = 0
     array[1] = 1
     for (i in 2 .. n.toInt()) {
         array[i] = array[i - 1] + array[i - 2]
@@ -49,3 +50,12 @@ fun fibonacciFinal(n:Long ): Long {
     println("Used Memory: ${usedMemory / (1024 * 1024)} MB")
     return array[1]
 }
+
+/**
+ * Complexidade:
+ *   em termos de tempo - O(n^2)
+ *   em termos de espaço extra - O(n)
+ */
+fun fibonacciNaiveRecursiva(n : Int) : Int =
+    if (n <= 1) n
+    else fibonacciNaiveRecursiva (n - 1) + fibonacciNaiveRecursiva (n - 2)
