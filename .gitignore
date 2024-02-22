@@ -1,6 +1,5 @@
 /AED_aux_code.iml
 .idea
+.DS_Store
 aed-kotlin-code.iml
-out/test/aed-kotlin-code/BinarySearchTest.class
-out/test/aed-kotlin-code/BinarySearchTestKt.class
-out/test/aed-kotlin-code/META-INF/aed-kotlin-code.kotlin_module
+/target/
