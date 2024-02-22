@@ -3,9 +3,9 @@
     Em espaco complexidade  =   O(n)    :   linear
  */
 
-fun fibonnaciRecursive(n: Int): Int {
+fun fibonacciRecursive(n: Int): Int {
     return if (n <= 1) 1
-    else fibonnaciRecursive(n - 1) + fibonnaciRecursive(n - 2)
+    else fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
 }
 
 /*
@@ -13,7 +13,7 @@ fun fibonnaciRecursive(n: Int): Int {
     Em espaco complexidade  =   O(n)    :   linear
  */
 
-fun fibonnaciIterativo(n: Int): Int {
+fun fibonacciIterative(n: Int): Int {
     val array = IntArray(n + 1)
     array[0] = 1
     array[1] = 1
@@ -28,7 +28,7 @@ fun fibonnaciIterativo(n: Int): Int {
     Em espaco complexidade  =   O(1)    :   constante
  */
 
-fun fibonnaciIterativoOtimizado(n: Int): Int {
+fun fibonacciIterativeOptimized(n: Int): Int {
     if (n <= 1) return 1
     var f0 = 1
     var f1 = 1
