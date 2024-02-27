@@ -4,15 +4,15 @@ import kotlin.system.measureTimeMillis
 
 class MyPowerTest {
     private val logger = LoggerFactory.getLogger(MyFibonacciTest::class.java)
-    private val a = 2
-    private val n = 31
+    private val base = 3
+    private val exponente = 1024 * 1024
 
     @Test
     fun recursive() {
         val executionTime = measureTimeMillis {
             logger.info("power recursive...")
-            val power = powerRecursive(a,n)
-            logger.info("power recursive a: $a n:$n = $power")
+            val power = powerRecursive(base,exponente)
+            logger.info("power recursive base: $base exponente:$exponente = $power")
         }
         logger.info("Execution Time: $executionTime milliseconds")
     }
@@ -21,8 +21,18 @@ class MyPowerTest {
     fun optimizedRecursive() {
         val executionTime = measureTimeMillis {
             logger.info("power recursive optimized...")
-            val power = powerRecursiveOptimized(a,n)
-            logger.info("power recursive optimized a: $a n:$n = $power")
+            val power = powerRecursiveOptimized(base,exponente)
+            logger.info("power recursive optimized base: $base exponente:$exponente = $power")
+        }
+        logger.info("Execution Time: $executionTime milliseconds")
+    }
+
+    @Test
+    fun iterative() {
+        val executionTime = measureTimeMillis {
+            logger.info("power iterative...")
+            val power = powerIterativo(base,exponente)
+            logger.info("power iterative base: $base exponente:$exponente = $power")
         }
         logger.info("Execution Time: $executionTime milliseconds")
     }
