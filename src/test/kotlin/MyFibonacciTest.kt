@@ -4,7 +4,7 @@ import kotlin.system.measureTimeMillis
 
 class MyFibonacciTest {
     private val logger = LoggerFactory.getLogger(MyFibonacciTest::class.java)
-    private val n = 50
+    private val n = 64
 
     @Test
     fun recursive() {
