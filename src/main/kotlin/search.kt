@@ -20,3 +20,16 @@ fun binarySearchIterative(a: IntArray, left: Int, right: Int, elem: Int): Int {
     }
     return -1
 }
+
+fun insertionSort (a : IntArray, left : Int, right: Int) {
+    var v = 0
+    for( i in left + 1 .. right){
+        v = a[i]
+        var j = i
+        while (j > left && v < a[j-1]) {
+            a[j] = a[j-1]
+            j--
+        }
+        a[j] = v
+    }
+}
