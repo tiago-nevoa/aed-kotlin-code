@@ -33,3 +33,19 @@ fun insertionSort (a : IntArray, left : Int, right: Int) {
         a[j] = v
     }
 }
+
+fun selectionSort(a : IntArray, left : Int, right: Int) {
+    for (i in left until right) {
+        var min = i
+        for(j in i + 1 .. right) {
+            if (a[min] > a[j]) min = j
+        }
+        exchange(a,min,i)
+    }
+}
+
+fun exchange(a: IntArray, min: Int, j: Int) {
+    val tmp = a[min]
+    a[min] = a[j]
+    a[j] = tmp
+}
