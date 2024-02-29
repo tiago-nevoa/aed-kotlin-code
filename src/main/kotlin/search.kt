@@ -44,8 +44,8 @@ fun selectionSort(a : IntArray, left : Int, right: Int) {
     }
 }
 
-fun exchange(a: IntArray, min: Int, j: Int) {
-    val tmp = a[min]
-    a[min] = a[j]
+fun exchange(a: IntArray, i: Int, j: Int) {
+    val tmp = a[i]
+    a[i] = a[j]
     a[j] = tmp
 }
