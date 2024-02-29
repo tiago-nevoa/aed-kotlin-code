@@ -1,4 +1,4 @@
-fun binarySearchRecursive(a: IntArray, left: Int, right: Int, element: Int): Int {
+tailrec fun binarySearchRecursive(a: IntArray, left: Int, right: Int, element: Int): Int {
     if (right < left) return -1
     val mid = (left+right) / 2
     return  if (a[mid] == element) mid
