@@ -2,7 +2,7 @@ fun maximalSubArray(a: IntArray, l: Int, r: Int): Triple{
     var bestLeft = l
     var bestRight = l-1
     var bestSum = 0
-    var actualSum = 0
+    var actualSum : Int
 
     for (i in l .. r) {
         actualSum = 0
