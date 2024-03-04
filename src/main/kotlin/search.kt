@@ -22,7 +22,7 @@ fun binarySearchIterative(a: IntArray, left: Int, right: Int, elem: Int): Int {
 }
 
 fun insertionSort (a : IntArray, left : Int, right: Int) {
-    var v = 0
+    var v : Int
     for( i in left + 1 .. right){
         v = a[i]
         var j = i
@@ -43,6 +43,11 @@ fun selectionSort(a : IntArray, left : Int, right: Int) {
         exchange(a,min,i)
     }
 }
+
+/*
+    Em tempo complexidade   =   O(1)  :   linear
+    Em espaco complexidade  =   O(1)  :   constante
+ */
 
 fun exchange(a: IntArray, i: Int, j: Int) {
     val tmp = a[i]
