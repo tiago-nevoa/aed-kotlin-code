@@ -21,36 +21,12 @@ fun binarySearchIterative(a: IntArray, left: Int, right: Int, elem: Int): Int {
     return -1
 }
 
-fun insertionSort (a : IntArray, left : Int, right: Int) {
-    var v : Int
-    for( i in left + 1 .. right){
-        v = a[i]
-        var j = i
-        while (j > left && v < a[j-1]) {
-            a[j] = a[j-1]
-            j--
-        }
-        a[j] = v
-    }
+fun lowerBound(a: IntArray, left: Int, right: Int, elem: Int): Int {
+    // toDo()
+    return -1
 }
 
-fun selectionSort(a : IntArray, left : Int, right: Int) {
-    for (i in left until right) {
-        var min = i
-        for(j in i + 1 .. right) {
-            if (a[min] > a[j]) min = j
-        }
-        exchange(a,min,i)
-    }
-}
-
-/*
-    Em tempo complexidade   =   O(1)  :   linear
-    Em espaco complexidade  =   O(1)  :   constante
- */
-
-fun exchange(a: IntArray, i: Int, j: Int) {
-    val tmp = a[i]
-    a[i] = a[j]
-    a[j] = tmp
+fun upperBound(a: IntArray, left: Int, right: Int, elem: Int): Int {
+    // toDo()
+    return -1
 }
