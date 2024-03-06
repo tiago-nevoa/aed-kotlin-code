@@ -109,3 +109,24 @@ fun merge(arr: IntArray, left: Int, middle: Int, right: Int) {
         k++
     }
 }
+
+/*
+    Em tempo complexidade   =   O(n)  :   linear
+    Em espaco complexidade  =   O(n)  :   linear
+ */
+
+fun margeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArray) {
+    var iB = 0
+    var iC = 0
+    var iA = left
+    while (iB < b.size && iC < c.size) {
+        if (b[iB] <= c[iC])
+            a[iA++] = b[iB++]
+        else
+            a[iA++] = c[iC++]
+    }
+    while (iB < b.size)
+        a[iA++] = b[iB++]
+    while (iC < c.size)
+        a[iA++] = c[iC++]
+}
