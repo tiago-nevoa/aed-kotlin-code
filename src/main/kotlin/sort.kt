@@ -32,8 +32,18 @@ fun exchange(a: IntArray, i: Int, j: Int) {
     a[j] = tmp
 }
 
+/*
+    Em tempo complexidade   =   O(n^2)  :   exponencial
+    Em espaco complexidade  =   O(n)    :   linear
+ */
+
 fun bubbleSort(a : IntArray, left : Int, right: Int) {
-    // toDo()
+    for(i in left until right) {
+        for (j in right downTo i+1) {
+            if (a[j] < a[j-1])
+                exchange(a,i,j)
+        }
+    }
 }
 
 fun mergeSort(a: IntArray, left: Int, right: Int) {
