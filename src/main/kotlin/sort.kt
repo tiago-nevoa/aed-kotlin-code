@@ -115,7 +115,7 @@ fun merge(arr: IntArray, left: Int, middle: Int, right: Int) {
     Em espaco complexidade  =   O(n)  :   linear
  */
 
-fun margeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArray) {
+fun mergeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArray) {
     var iB = 0
     var iC = 0
     var iA = left
@@ -129,4 +129,17 @@ fun margeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArra
         a[iA++] = b[iB++]
     while (iC < c.size)
         a[iA++] = c[iC++]
+}
+
+fun margeSortClass (a : IntArray, left : Int, right : Int){
+    if (left < right) {
+        val mid = (left + right) ushr 1
+        mergeSort(a, left, mid)
+        mergeSort(a, mid + 1, right)
+        mergeClass(a, left, mid, right)
+    }
+}
+
+fun mergeClass (a : IntArray, left: Int, middle: Int, right: Int){
+   // todo() create array b and c
 }
