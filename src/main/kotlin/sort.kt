@@ -110,12 +110,45 @@ fun merge(arr: IntArray, left: Int, middle: Int, right: Int) {
     }
 }
 
+
+
+/*
+    Em tempo complexidade   =
+    Em espaco complexidade  =
+ */
+
+fun mergeSortClass (a : IntArray, left : Int, right : Int) {
+    if (left < right) {
+        val mid = (left + right) ushr 1
+        mergeSortClass(a, left, mid)
+        mergeSortClass(a, mid + 1, right)
+        mergeClass(a, left, mid, right)
+    }
+}
+
 /*
     Em tempo complexidade   =   O(n)  :   linear
     Em espaco complexidade  =   O(n)  :   linear
  */
 
-fun margeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArray) {
+fun mergeClass (a : IntArray, left: Int, middle: Int, right: Int) {
+    val b = IntArray(middle - left + 1)
+    val c = IntArray(right - middle)
+    for (i in b.indices) {
+        b[i] = a[i + left]
+    }
+    for (i in c.indices) {
+        c[i] = a[i + middle+1]
+    }
+    mergeClass(a,left,right,b,c)
+}
+
+/*
+    Em tempo complexidade   =   O(n)  :   linear
+    Em espaco complexidade  =   O(n)  :   linear
+ */
+
+fun mergeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArray) {
     var iB = 0
     var iC = 0
     var iA = left
