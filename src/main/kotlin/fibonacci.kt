@@ -13,8 +13,9 @@ fun fibonacciRecursive(n: Int): Int {
     Em espaco complexidade  =   O(n)    :   linear
  */
 
-fun fibonacciIterative(n: Int): Int {
-    val array = IntArray(n + 1)
+fun fibonacciIterative(n: Int): Long {
+    if (n <= 0) return 1
+    val array = LongArray(n + 1)
     array[0] = 1
     array[1] = 1
     for (i in 2..n) {
@@ -28,16 +29,15 @@ fun fibonacciIterative(n: Int): Int {
     Em espaco complexidade  =   O(1)    :   constante
  */
 
-fun fibonacciIterativeOptimized(n: Int): Int {
+fun fibonacciIterativeOptimized(n: Int): Long {
     if (n <= 1) return 1
-    var f0 = 1
-    var f1 = 1
-    var result = 0
+    var f0 = 1L
+    var f1 = 1L
+    var result = 0L
     for (i in 2..n) {
         result = f0 + f1
         f0 = f1
         f1 = result
     }
-
     return result
 }
