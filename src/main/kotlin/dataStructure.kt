@@ -1,3 +1,6 @@
+
+// 1 step
+
 fun maxHeapify(array : Array <Int>, n : Int, pos : Int) {
     val l = left(pos)
     val r = right(pos)
@@ -23,3 +26,14 @@ fun left (i : Int) = 2 * i + 1
 fun right (i : Int) = 2 * i + 2
 
 fun parent (i : Int) = (i - 1) / 2
+
+// 2 step
+
+fun transform(array: Array<Int>, n : Int) {
+    var size = n
+
+    while(size > 0) {
+        exchange(array, 0, --size)
+        maxHeapify(array, size, 0)
+    }
+}
