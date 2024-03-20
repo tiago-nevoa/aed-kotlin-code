@@ -1,9 +1,9 @@
 /*
-    Em tempo complexidade   =   O(n^2)  :   exponencial
+    Em tempo complexidade   =   O(n^2)  :   quadrática
     Em espaco complexidade  =   O(n)    :   linear
  */
 
-fun fibonacciRecursive(n: Int): Int {
+fun fibonacciRecursive(n: Int): Long {
     return if (n <= 1) 1
     else fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
 }
