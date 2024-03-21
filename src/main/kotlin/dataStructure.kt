@@ -28,12 +28,20 @@ fun right (i : Int) = 2 * i + 2
 fun parent (i : Int) = (i - 1) / 2
 
 // 2 step
-
+// O(n*log2^n)
 fun transform(array: Array<Int>, n : Int) {
     var size = n
 
     while(size > 0) {
         exchange(array, 0, --size)
         maxHeapify(array, size, 0)
+    }
+}
+
+fun buildMaxHeap(array : Array <Int>, n : Int) {
+    var pai = parent(n-1)
+    while (pai >= 0) {
+        maxHeapify(array, n, pai)
+        pai--
     }
 }
