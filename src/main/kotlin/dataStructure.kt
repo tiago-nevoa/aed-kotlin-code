@@ -45,3 +45,20 @@ fun buildMaxHeap(array : Array <Int>, n : Int) {
         pai--
     }
 }
+
+fun increaseKey(array: Array<Int>, n : Int, pos : Int) {
+    var pai = parent(pos)
+    var actualPos = pos
+    while (actualPos > 0 && array[actualPos] > array[pai]) {
+        exchange(array,actualPos,pos)
+        actualPos = pai
+        pai = parent(actualPos)
+    }
+}
+
+//O(n*log2^n)
+
+fun heapSort(array: Array<Int>, n: Int){
+    buildMaxHeap(array, n)
+    transform(array, n)
+}
