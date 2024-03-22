@@ -28,7 +28,7 @@ fun right (i : Int) = 2 * i + 2
 fun parent (i : Int) = (i - 1) / 2
 
 // 2 step
-
+// O(n*log2^n)
 fun transform(array: Array<Int>, n : Int) {
     var size = n
 
@@ -36,4 +36,29 @@ fun transform(array: Array<Int>, n : Int) {
         exchange(array, 0, --size)
         maxHeapify(array, size, 0)
     }
+}
+
+fun buildMaxHeap(array : Array <Int>, n : Int) {
+    var pai = parent(n-1)
+    while (pai >= 0) {
+        maxHeapify(array, n, pai)
+        pai--
+    }
+}
+
+fun increaseKey(array: Array<Int>, n : Int, pos : Int) {
+    var pai = parent(pos)
+    var actualPos = pos
+    while (actualPos > 0 && array[actualPos] > array[pai]) {
+        exchange(array,actualPos,pos)
+        actualPos = pai
+        pai = parent(actualPos)
+    }
+}
+
+//O(n*log2^n)
+
+fun heapSort(array: Array<Int>, n: Int){
+    buildMaxHeap(array, n)
+    transform(array, n)
 }
