@@ -1,3 +1,5 @@
+import java.util.*
+
 fun insertionSort (a : IntArray, left : Int, right: Int) {
     var v : Int
     for( i in left + 1 .. right){
@@ -162,4 +164,57 @@ fun mergeClass (a : IntArray, left : Int, right : Int, b : IntArray, c : IntArra
         a[iA++] = b[iB++]
     while (iC < c.size)
         a[iA++] = c[iC++]
+}
+
+fun partition(array : Array<Int>, left : Int, right : Int) : Int{
+    var i = left-1
+    var j = right
+    val pivot = array[right]
+
+    while (true) {
+        while(i < right && array[++i] < pivot);
+        while(j > left && array[--j] > pivot);
+
+        if (i >= j) break
+
+        exchange(array,i,j)
+    }
+    exchange(array,i,right)
+    return i
+}
+
+fun quickSort(array: Array<Int>, left : Int, right : Int) {
+    val i = partition(array, left, right)
+    if (left < right) {
+        quickSort(array, left, i - 1)
+        quickSort(array, i + 1, right)
+    }
+}
+
+fun quickSortIterative(array: Array<Int>, left: Int, right: Int) {
+    val stack = Stack<Int>()
+    stack.push(left)
+    stack.push(right)
+
+    while (stack.isNotEmpty()) {
+        var r = stack.pop()
+        var l = stack.pop()
+
+        if ( r <= l) continue
+
+        var i = partition(array, l, r)
+
+        if (l - i >= r - i) {
+            stack.push(l)
+            stack.push(i - 1)
+        }
+
+        stack.push(i + 1)
+        stack.push(r)
+
+        if (l - i < r - i) {
+            stack.push(l)
+            stack.push(i - 1)
+        }
+    }
 }

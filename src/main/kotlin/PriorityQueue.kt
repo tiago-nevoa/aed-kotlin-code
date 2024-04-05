@@ -33,7 +33,7 @@ fun PriorityQueue.minHeapify(pos : Int) {
     val r = right (pos)
     if(l < size && cmp(array[l], array[pos]) < 0)
         pai = l
-    if(l < size && cmp(array[l], array[pai]) > 0)
+    if(r < size && cmp(array[r], array[pai]) < 0)
         pai = r
     if(pai != pos) {
         exchange(array,pai,pos)
