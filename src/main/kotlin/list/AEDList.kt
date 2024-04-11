@@ -4,8 +4,10 @@ interface AEDList<E> {
 
     val size : Int
 
-    fun get(i:Int) : E
+    operator fun get(i:Int) : E
 
     fun isEmpty() : Boolean
+
+    fun contains(element:E):Boolean
 
 }

@@ -12,10 +12,12 @@ class AEDArrayList<E> : AEDList<E> {
         get() = elements.size
 
     override fun get(i: Int): E {
-        TODO("Not yet implemented")
+        return elements[i]
     }
 
-    override fun isEmpty(): Boolean {
-        return size == 0
+    override fun isEmpty() = size == 0
+
+    override fun contains(element: E): Boolean {
+        return elements.contains(element)
     }
 }
