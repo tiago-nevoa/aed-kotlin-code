@@ -68,7 +68,6 @@ class AEDLinkedList<E>: AEDMutableList<E> {
         return head==head.previous && head==head.next
     }
 
-    override fun contains(element: E): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun contains(element: E) = search(element) != null
+
 }
